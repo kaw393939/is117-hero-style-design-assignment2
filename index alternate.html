@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legacy Haus - Mid-Century Home Restoration</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Lato:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Legacy Haus Brand Colors */
+            --walnut-brown: #5C4033;
+            --soft-cream: #F4F1ED;
+            --muted-teal: #4E7E7E;
+            --warm-terracotta: #D97752;
+            --sage-green: #A3B18A;
+            
+            /* Typography */
+            --primary-font: 'Cormorant Garamond', serif;
+            --secondary-font: 'Lato', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--secondary-font);
+            background-color: var(--soft-cream);
+            color: var(--walnut-brown);
+            line-height: 1.6;
+        }
+
+        /* Hero Section - Split Layout */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 100vh;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 3rem;
+            background-color: var(--walnut-brown);
+            color: var(--soft-cream);
+        }
+
+        .hero-image {
+            background: url('images/haus.png') center/contain no-repeat;
+            background-color: var(--soft-cream);
+            position: relative;
+        }
+
+        /* Overlay pattern for visual interest */
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, 
+                transparent 40%, 
+                rgba(163, 177, 138, 0.1) 50%, 
+                transparent 60%);
+        }
+
+        .logo-small {
+            width: 60px;
+            height: 60px;
+            background-color: var(--muted-teal);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--primary-font);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-family: var(--primary-font);
+            font-size: 3.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+
+        .tagline {
+            font-family: var(--primary-font);
+            font-size: 1.3rem;
+            font-style: italic;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            color: var(--sage-green);
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            line-height: 1.7;
+            max-width: 450px;
+        }
+
+        .cta-container {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .cta-primary {
+            display: inline-block;
+            padding: 1rem 2rem;
+            font-family: var(--secondary-font);
+            font-size: 1rem;
+            font-weight: 500;
+            text-decoration: none;
+            color: var(--walnut-brown);
+            background-color: var(--warm-terracotta);
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .cta-primary:hover {
+            background-color: #c46642;
+            transform: translateY(-2px);
+        }
+
+        .cta-secondary {
+            display: inline-block;
+            padding: 1rem 2rem;
+            font-family: var(--secondary-font);
+            font-size: 1rem;
+            font-weight: 500;
+            text-decoration: none;
+            color: var(--soft-cream);
+            background: transparent;
+            border: 2px solid var(--sage-green);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .cta-secondary:hover {
+            background-color: var(--sage-green);
+            color: var(--walnut-brown);
+        }
+
+        /* Trust indicators */
+        .trust-indicators {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .trust-text {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-bottom: 1rem;
+        }
+
+        .trust-features {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .trust-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .trust-icon {
+            width: 20px;
+            height: 20px;
+            background-color: var(--sage-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.7rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+                grid-template-rows: 300px 1fr;
+            }
+            
+            .hero-content {
+                padding: 2rem 1.5rem;
+                order: 2;
+            }
+            
+            .hero-image {
+                order: 1;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .cta-container {
+                flex-direction: column;
+            }
+            
+            .trust-features {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        /* Subtle animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-content > * {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .hero-content > *:nth-child(1) { animation-delay: 0.1s; }
+        .hero-content > *:nth-child(2) { animation-delay: 0.2s; }
+        .hero-content > *:nth-child(3) { animation-delay: 0.3s; }
+        .hero-content > *:nth-child(4) { animation-delay: 0.4s; }
+        .hero-content > *:nth-child(5) { animation-delay: 0.5s; }
+        .hero-content > *:nth-child(6) { animation-delay: 0.6s; }
+
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-content">
+            <div class="logo-small">LH</div>
+            <h1>Legacy Haus</h1>
+            <p class="tagline">"Restoring Homes, Preserving Legacies."</p>
+            <p class="hero-description">
+                We specialize in the thoughtful restoration of mid-century modern homes, treating each property as a piece of living history while preparing it for families who will create new memories.
+            </p>
+            
+            <div class="cta-container">
+                <a href="#" class="cta-primary">See Before & After</a>
+                <a href="#" class="cta-secondary">Our Approach</a>
+            </div>
+
+            <div class="trust-indicators">
+                <p class="trust-text">Why families trust Legacy Haus:</p>
+                <div class="trust-features">
+                    <div class="trust-feature">
+                        <div class="trust-icon">✓</div>
+                        <span>Respectful Acquisition</span>
+                    </div>
+                    <div class="trust-feature">
+                        <div class="trust-icon">✓</div>
+                        <span>Historical Preservation</span>
+                    </div>
+                    <div class="trust-feature">
+                        <div class="trust-icon">✓</div>
+                        <span>Gentle Transitions</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-image"></div>
+    </section>
+
+    <script>
+        // Add subtle parallax effect on scroll (if page has more content)
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroImage = document.querySelector('.hero-image');
+            if (heroImage) {
+                heroImage.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+
+        // Add click tracking for CTAs (placeholder for analytics)
+        document.querySelectorAll('[class^="cta-"]').forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                console.log('CTA clicked:', e.target.textContent);
+                // Here you would typically send analytics or navigate
+                alert(`Clicked: ${e.target.textContent}\n\nThis would normally navigate to the appropriate page.`);
+            });
+        });
+    </script>
+</body>
+</html>

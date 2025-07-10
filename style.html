@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legacy Haus - Brand Style Guide</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Lato:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Brand Colors */
+            --walnut-brown: #5C4033;
+            --soft-cream: #F4F1ED;
+            --muted-teal: #4E7E7E;
+            --warm-terracotta: #D97752;
+            --sage-green: #A3B18A;
+            
+            /* Typography */
+            --primary-font: 'Cormorant Garamond', serif;
+            --secondary-font: 'Lato', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--secondary-font);
+            background-color: var(--soft-cream);
+            color: var(--walnut-brown);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--walnut-brown);
+            color: var(--soft-cream);
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .brand-logo {
+            font-family: var(--primary-font);
+            font-size: 3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .tagline {
+            font-family: var(--primary-font);
+            font-size: 1.2rem;
+            font-style: italic;
+            opacity: 0.9;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 3rem 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        section:last-child {
+            border-bottom: none;
+        }
+
+        h1, h2, h3 {
+            font-family: var(--primary-font);
+            color: var(--walnut-brown);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-intro {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            font-size: 1.1rem;
+            color: var(--muted-teal);
+        }
+
+        /* Color Palette */
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .color-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .color-swatch {
+            height: 120px;
+            width: 100%;
+        }
+
+        .walnut-brown { background-color: var(--walnut-brown); }
+        .soft-cream { background-color: var(--soft-cream); border: 1px solid #ddd; }
+        .muted-teal { background-color: var(--muted-teal); }
+        .warm-terracotta { background-color: var(--warm-terracotta); }
+        .sage-green { background-color: var(--sage-green); }
+
+        .color-info {
+            padding: 1rem;
+        }
+
+        .color-name {
+            font-family: var(--primary-font);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .color-hex {
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            color: var(--muted-teal);
+            margin-bottom: 0.5rem;
+        }
+
+        .color-usage {
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        /* Typography Section */
+        .typography-demo {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .font-demo {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .primary-font-demo {
+            font-family: var(--primary-font);
+        }
+
+        .secondary-font-demo {
+            font-family: var(--secondary-font);
+        }
+
+        .font-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--muted-teal);
+        }
+
+        .font-sizes {
+            margin-bottom: 1rem;
+        }
+
+        .font-sample {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Messaging Section */
+        .messaging-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .message-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-left: 4px solid var(--muted-teal);
+        }
+
+        .message-title {
+            font-family: var(--primary-font);
+            font-size: 1.3rem;
+            color: var(--walnut-brown);
+            margin-bottom: 1rem;
+        }
+
+        .quote {
+            font-style: italic;
+            font-size: 1.1rem;
+            color: var(--muted-teal);
+            line-height: 1.5;
+        }
+
+        /* Button Styles */
+        .button-demo {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            font-family: var(--secondary-font);
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-block;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--muted-teal);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #3d6666;
+        }
+
+        .btn-secondary {
+            background-color: var(--warm-terracotta);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background-color: #c46642;
+        }
+
+        .btn-tertiary {
+            background-color: var(--sage-green);
+            color: white;
+        }
+
+        .btn-tertiary:hover {
+            background-color: #8a9b75;
+        }
+
+        /* Brand Voice Table */
+        .brand-voice-table {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .brand-voice-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .brand-voice-table th,
+        .brand-voice-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .brand-voice-table th {
+            background-color: var(--walnut-brown);
+            color: white;
+            font-family: var(--primary-font);
+            font-weight: 600;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .typography-demo {
+                grid-template-columns: 1fr;
+            }
+            
+            .color-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .button-demo {
+                flex-direction: column;
+            }
+            
+            .btn {
+                text-align: center;
+            }
+        }
+
+        /* Usage Examples */
+        .usage-example {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .example-header {
+            font-family: var(--primary-font);
+            font-size: 2rem;
+            color: var(--walnut-brown);
+            margin-bottom: 0.5rem;
+        }
+
+        .example-subheader {
+            color: var(--muted-teal);
+            margin-bottom: 1rem;
+        }
+
+        .example-body {
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="brand-logo">Legacy Haus</div>
+            <div class="tagline">"Restoring Homes, Preserving Legacies."</div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Brand Overview -->
+        <section id="brand-overview">
+            <div class="container">
+                <h2>Brand Overview</h2>
+                <div class="section-intro">
+                    The Caregiver archetype focused on thoughtfully acquiring, restoring, and reselling mid-century homes with respect for their history and the families who lived in them.
+                </div>
+                
+                <div class="brand-voice-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Element</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Mission</strong></td>
+                                <td>To thoughtfully acquire, restore, and resell mid-century homes with respect for their history and the families who lived in them.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Tone</strong></td>
+                                <td>Warm, trustworthy, thoughtful, empathetic</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Style</strong></td>
+                                <td>Clear, down-to-earth, emotionally intelligent</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Color Palette -->
+        <section id="colors">
+            <div class="container">
+                <h2>Color Palette</h2>
+                <div class="section-intro">
+                    These tones evoke nature, warmth, and mid-century sensibility.
+                </div>
+                
+                <div class="color-grid">
+                    <div class="color-card">
+                        <div class="color-swatch walnut-brown"></div>
+                        <div class="color-info">
+                            <div class="color-name">Walnut Brown</div>
+                            <div class="color-hex">#5C4033</div>
+                            <div class="color-usage">Primary base, logo, headers</div>
+                        </div>
+                    </div>
+                    
+                    <div class="color-card">
+                        <div class="color-swatch soft-cream"></div>
+                        <div class="color-info">
+                            <div class="color-name">Soft Cream</div>
+                            <div class="color-hex">#F4F1ED</div>
+                            <div class="color-usage">Background, text body</div>
+                        </div>
+                    </div>
+                    
+                    <div class="color-card">
+                        <div class="color-swatch muted-teal"></div>
+                        <div class="color-info">
+                            <div class="color-name">Muted Teal</div>
+                            <div class="color-hex">#4E7E7E</div>
+                            <div class="color-usage">Accent color for CTA and links</div>
+                        </div>
+                    </div>
+                    
+                    <div class="color-card">
+                        <div class="color-swatch warm-terracotta"></div>
+                        <div class="color-info">
+                            <div class="color-name">Warm Terracotta</div>
+                            <div class="color-hex">#D97752</div>
+                            <div class="color-usage">Accent buttons, highlights</div>
+                        </div>
+                    </div>
+                    
+                    <div class="color-card">
+                        <div class="color-swatch sage-green"></div>
+                        <div class="color-info">
+                            <div class="color-name">Sage Green</div>
+                            <div class="color-hex">#A3B18A</div>
+                            <div class="color-usage">Secondary highlight, form fields</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Typography -->
+        <section id="typography">
+            <div class="container">
+                <h2>Typography</h2>
+                <div class="section-intro">
+                    Combining classic warmth with modern readability.
+                </div>
+                
+                <div class="typography-demo">
+                    <div class="font-demo">
+                        <div class="font-name">Primary Font: Cormorant Garamond</div>
+                        <div class="font-sizes primary-font-demo">
+                            <div class="font-sample" style="font-size: 2.5rem; font-weight: 600;">Headings & Taglines</div>
+                            <div class="font-sample" style="font-size: 1.8rem; font-weight: 400;">Secondary Headings</div>
+                            <div class="font-sample" style="font-size: 1.2rem; font-style: italic;">Elegant Emphasis</div>
+                        </div>
+                        <p class="primary-font-demo">Classic, warm serif perfect for creating emotional connection and establishing trust.</p>
+                    </div>
+                    
+                    <div class="font-demo">
+                        <div class="font-name">Secondary Font: Lato</div>
+                        <div class="font-sizes secondary-font-demo">
+                            <div class="font-sample" style="font-size: 1.1rem; font-weight: 700;">Bold Body Text</div>
+                            <div class="font-sample" style="font-size: 1rem; font-weight: 500;">Medium Weight Text</div>
+                            <div class="font-sample" style="font-size: 1rem; font-weight: 300;">Light Body Text</div>
+                        </div>
+                        <p>Clean, modern sans-serif for body text and UI elements. Ensures excellent readability across all devices and platforms.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Messaging -->
+        <section id="messaging">
+            <div class="container">
+                <h2>Messaging Pillars</h2>
+                <div class="section-intro">
+                    Three core messages that guide all communications.
+                </div>
+                
+                <div class="messaging-grid">
+                    <div class="message-card">
+                        <div class="message-title">Care for Legacy</div>
+                        <div class="quote">"We treat every home as a living story — and every family with respect."</div>
+                    </div>
+                    
+                    <div class="message-card">
+                        <div class="message-title">Design with Purpose</div>
+                        <div class="quote">"Modernized with intention, while preserving what matters."</div>
+                    </div>
+                    
+                    <div class="message-card">
+                        <div class="message-title">Ease the Transition</div>
+                        <div class="quote">"Selling an estate can be hard. We make it easier — and gentler."</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Button Styles -->
+        <section id="buttons">
+            <div class="container">
+                <h2>Call-to-Action Buttons</h2>
+                <div class="section-intro">
+                    Thoughtfully worded buttons that reflect our caring approach.
+                </div>
+                
+                <div class="button-demo">
+                    <a href="#" class="btn btn-primary">Get a Thoughtful Offer</a>
+                    <a href="#" class="btn btn-secondary">Explore Our Restorations</a>
+                    <a href="#" class="btn btn-tertiary">See Before & After</a>
+                </div>
+                
+                <div class="button-demo">
+                    <a href="#" class="btn btn-primary">Our Approach</a>
+                    <a href="#" class="btn btn-secondary">Recent Projects</a>
+                    <a href="#" class="btn btn-tertiary">Sell With Care</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Usage Example -->
+        <section id="usage-example">
+            <div class="container">
+                <h2>Design Implementation Example</h2>
+                <div class="section-intro">
+                    How the brand elements come together in practice.
+                </div>
+                
+                <div class="usage-example">
+                    <h1 class="example-header">Welcome to Legacy Haus</h1>
+                    <div class="example-subheader">Restoring Homes, Preserving Legacies</div>
+                    <div class="example-body">
+                        <p>Every mid-century home has a story. From the family who first turned the key to the memories made in sun-drenched living rooms, these homes hold decades of life, love, and legacy.</p>
+                        
+                        <p>At Legacy Haus, we understand that selling a family home isn't just a transaction—it's a transition. That's why we approach every property with the care and respect it deserves, honoring its history while thoughtfully preparing it for its next chapter.</p>
+                    </div>
+                    <a href="#" class="btn btn-primary">Get a Thoughtful Offer</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer style="background-color: var(--walnut-brown); color: var(--soft-cream); text-align: center; padding: 2rem 0; margin-top: 3rem;">
+        <div class="container">
+            <div style="font-family: var(--primary-font); font-size: 1.5rem; margin-bottom: 0.5rem;">Legacy Haus</div>
+            <div>Mid-Century Homes, Thoughtfully Renewed</div>
+        </div>
+    </footer>
+</body>
+</html>
