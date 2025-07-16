@@ -1,4 +1,4 @@
-# Brand-Driven Web Development Assignment
+# Brand-Driven Web Development Assignment - Change ME
 **IS117 Summer Course | Week 1**
 
 > **Create a persuasive website hero section using brand archetypes and psychological principles**
