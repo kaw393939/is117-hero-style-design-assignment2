@@ -3,6 +3,8 @@
 
 > **Create a persuasive website hero section using brand archetypes and psychological principles**
 
+## [Git Commands](git.md)
+
 ## 🚀 Quick Start Checklist
 
 **New to this assignment? Start here:**
