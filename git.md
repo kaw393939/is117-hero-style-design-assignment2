@@ -139,3 +139,74 @@ git reset --mixed HEAD~1
 | `git reset --soft`  | ✅           | ❌              | ❌                    |
 | `git reset --mixed` | ✅           | ✅              | ❌                    |
 | `git reset --hard`  | ✅           | ✅              | ✅                    |
+
+
+---
+
+## ✅ Cherry Picking Example
+
+Let's say you're on `main` and you want to apply a specific commit from `feature-branch` to `main`.
+
+---
+
+### 🧱 Setup:
+
+```bash
+# Start on main
+git checkout main
+
+# View log of feature-branch
+git log feature-branch --oneline
+```
+
+You see this commit on `feature-branch`:
+
+```
+a1b2c3d Add login validation
+```
+
+You want to apply just that commit to `main`.
+
+---
+
+### 🍒 Cherry-pick the commit:
+
+```bash
+git cherry-pick a1b2c3d
+```
+
+This will:
+
+* Apply the **exact changes** from `a1b2c3d` to your current branch (`main`)
+* Create a new commit on `main` with the same message and diff
+
+---
+
+### 🧼 Resolve conflicts (if any):
+
+If there are conflicts, Git will pause and let you fix them. After resolving:
+
+```bash
+git add .
+git cherry-pick --continue
+```
+
+Or to abort:
+
+```bash
+git cherry-pick --abort
+```
+
+---
+
+### 💡 Bonus: Cherry-pick multiple commits
+
+```bash
+git cherry-pick a1b2c3d f6g7h8i
+```
+
+Or a range:
+
+```bash
+git cherry-pick a1b2c3d^..f6g7h8i
+```
